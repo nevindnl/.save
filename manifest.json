@@ -56,7 +56,6 @@
 
   "permissions": [
     "activeTab",
-    "bookmarks",
 		"commands",
 		"downloads",
     "storage",
