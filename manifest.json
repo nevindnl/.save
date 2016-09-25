@@ -4,8 +4,8 @@
   "manifest_version": 2,
 
   "name": ".save",
-  "description": "Save Mode: ⌘M. Click to save. Add a note: ⌘K. Save notes: ⇧⌘K.",
-  "version": "0.0.0.1",
+  "description": "Save Mode: ⌘M. Click to save. Add a note: ⌘K. View notes: ⌘J. Save notes: ⇧⌘K.",
+  "version": "0.0.0.2",
 
   "browser_action": {
 		"default_popup": "options.html",
@@ -52,6 +52,15 @@
         "linux": "Ctrl+Shift+K"
       },
 			"description": "Save notes."
+    },
+		"view_notes":{
+			"suggested_key": {
+        "windows": "Ctrl+J",
+        "mac": "Command+J",
+        "chromeos": "Ctrl+J",
+        "linux": "Ctrl+J"
+      },
+			"description": "View notes."
     }
   },
 
