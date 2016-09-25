@@ -1,0 +1,52 @@
+body{
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	width: 300px;
+	padding: 10px 20px;
+}
+
+label{
+	justify-content: center;
+	width: 100%;
+}
+
+#rename_label{
+	margin-bottom: 20px;
+}
+
+#directory_input{
+	padding: 2px 2px;
+	margin-bottom: 20px;
+	border: 0;
+	border-bottom: 1px solid black;
+	outline: 0;
+	outline-offset: 0;
+	width: 280px;
+	overflow-x: scroll;
+}
+
+#directory_input:focus{
+	border-bottom: 1px solid #1b41fd;
+}
+
+#directory{
+	padding: 5px 0;
+	overflow-x: scroll;
+	margin-left: 20px;
+	vertical-align: middle;
+	text-align: right;
+	width: 140px;
+}
+
+button{
+	width: 100%;
+	padding: 10px;
+	outline: 0;
+	outline-offset: 0;
+	border: 1px solid black;
+	background-color: white;
+	border-radius: 5px;
+	font-size: 13px;
+	background-color: #b5e398;
+}

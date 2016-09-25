@@ -8,6 +8,7 @@
   "version": "1.0",
 
   "browser_action": {
+		"default_popup": "options.html",
     "default_icon": "assets/inactive.png"
   },
 
@@ -18,19 +19,35 @@
 		}
 	],
 
-
   "commands": {
-    "_execute_browser_action": {
+    "toggle_save_mode": {
       "suggested_key": {
         "windows": "Ctrl+M",
         "mac": "Command+M",
         "chromeos": "Ctrl+M",
         "linux": "Ctrl+M"
-      }
+      },
+			"description": "Toggle save mode."
+    },
+		"add_note":{
+			"suggested_key": {
+				"windows": "Ctrl+K",
+				"mac": "Command+K",
+				"chromeos": "Ctrl+K",
+				"linux": "Ctrl+K"
+			},
+			"description": "Add note."
+		},
+		"save_notes":{
+			"suggested_key": {
+        "windows": "Ctrl+Shift+A",
+        "mac": "Command+Shift+A",
+        "chromeos": "Ctrl+Shift+A",
+        "linux": "Ctrl+Shift+A"
+      },
+			"description": "Save notes."
     }
   },
-
-  "options_page": "options.html",
 
   "background": {
     "scripts": ["lib/background.js"],
@@ -39,10 +56,11 @@
 
   "permissions": [
     "activeTab",
-    "tabs",
     "bookmarks",
-    "storage",
+		"commands",
 		"downloads",
+    "storage",
+    "tabs",
     "http://*/*",
 		"https://*/*"
   ]
