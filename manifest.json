@@ -4,13 +4,19 @@
   "manifest_version": 2,
 
   "name": ".save",
-  "description": "Save Mode: ⌘M. Click to save.",
+  "description": "Save Mode: ⌘M. Click to save. Add a note: ⌘K. Save notes: ⇧⌘K.",
   "version": "1.0",
 
   "browser_action": {
 		"default_popup": "options.html",
     "default_icon": "assets/inactive.png"
   },
+
+	"icons": {
+		"16": "assets/inactive16.png",
+		"48": "assets/inactive.png",
+		"128": "assets/inactive128.png"
+	},
 
 	"content_scripts": [
 		{
@@ -40,10 +46,10 @@
 		},
 		"save_notes":{
 			"suggested_key": {
-        "windows": "Ctrl+Shift+A",
-        "mac": "Command+Shift+A",
-        "chromeos": "Ctrl+Shift+A",
-        "linux": "Ctrl+Shift+A"
+        "windows": "Ctrl+Shift+K",
+        "mac": "Command+Shift+K",
+        "chromeos": "Ctrl+Shift+K",
+        "linux": "Ctrl+Shift+K"
       },
 			"description": "Save notes."
     }
