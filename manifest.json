@@ -5,7 +5,7 @@
 
   "name": ".save",
   "description": "Save Mode: ⌘M. Click to save. Add a note: ⌘K. Save notes: ⇧⌘K.",
-  "version": "1.0",
+  "version": "0.0.0.1",
 
   "browser_action": {
 		"default_popup": "options.html",
