@@ -1,8 +1,8 @@
 # .save
 
-[Chrome web store][chrome]
+<img src="./screenshots/tile.png" style="width:100px;"></img>
 
-<img src="./screenshots/tile.png" style="width:300px;"></img>
+[Chrome web store][chrome]
 
 [chrome]: https://chrome.google.com/webstore/detail/save/hilnnbhccdobpbjfepfoacjhaafpoafm
 
