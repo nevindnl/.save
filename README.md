@@ -16,7 +16,7 @@
 
 A [background script][background] handles commands and initiates downloads. A [content script][content] binds the click listeners.
 
-When a user clicks on the page in save mode, first, the target element is checked to be an image. If not, the DOM tree is traversed backwards from the element, searching for a parent with a background image. If not, the DOM tree is traversed backwards from the element, looking for a parent link.
+When a user clicks on the page in save mode, first, the target element is checked to be an image. If not, the DOM tree is traversed up from the element, searching for a parent with a background image. If not, the DOM tree is traversed up from the element, searching for a parent link.
 
 [background]: ./lib/background.js
 [content]: ./lib/save.js
@@ -27,14 +27,17 @@ document.addEventListener('click', e => {
     if (data.saveMode){
       const target = e.target;
 
+      // if image, send message to download
       if ($(target).is('img')){
         chrome.runtime.sendMessage({url: target.src});
       } else {
+        // else, construct tree
         const tree = $.makeArray($(target).parents());
         tree.unshift(target);
 
         let parentImageUrl;
 
+        // traverse, searching for an element a background image
         tree.some(node => {
           const background = $(node).css('background-image');
           if (background !== 'none'){
@@ -45,11 +48,14 @@ document.addEventListener('click', e => {
           }
         });
 
+        // if there is, send message to download
         if (parentImageUrl){
           chrome.runtime.sendMessage({url: parentImageUrl});
         } else {
+          // else, traverse, searching for a link
           const a = $(target).closest('a')[0];
 
+          // if there is, send message to download
           if (a){
             chrome.runtime.sendMessage({url: a.href});
           }
